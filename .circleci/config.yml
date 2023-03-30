@@ -21,7 +21,9 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: app-{{ checksum "package.json"}}
+          key: 
+            - app-{{ checksum "package.json"}}
+            - app-
   deploy-to-aws-s3:
     docker:
       - image: circleci/node:latest
